@@ -16,7 +16,6 @@ export default function TweetCard() {
   //     if (value && value.indexOf('@') > 0) {
   //       for (let i = value.indexOf('@'); i < value.length; i++) {
   //         if (value.charAt(i) === ' ') {
-  //           console.log('okey')
   //           profileText = value.slice(value.indexOf('@'), i)
   //           break
   //         }
