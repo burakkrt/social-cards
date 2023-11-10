@@ -63,6 +63,11 @@ export const AgendaTweetCard = styled.div`
 
       &-post-text {
         margin: 0;
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 9;
+        -webkit-box-orient: vertical;
       }
 
       &-post-infos {

@@ -85,6 +85,11 @@ export const AgendaNewCard = styled.div`
           font: normal normal normal 16px/20px Euclid Circular A;
           color: #2e2f31;
           margin-top: 1rem;
+          display: -webkit-box;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 6;
+          -webkit-box-orient: vertical;
         }
       }
     }

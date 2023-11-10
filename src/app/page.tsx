@@ -4,7 +4,7 @@ import NewCard from './../components/new-card'
 export default function Home() {
   return (
     <main style={{ margin: '48px', display: 'flex', gap: '48px' }}>
-      <TweetCard />
+      {/*<TweetCard />*/}
       <NewCard />
     </main>
   )
