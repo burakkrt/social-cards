@@ -58,11 +58,9 @@ export default function TweetCard() {
           Türkiye’ye ne ad altında olursa olsun getirmek Gazze’yi boşaltmak
           isteyen İsrail’e hizmettir. @umitozdag
         </p>
-        <img
-          className="agenda-tweet-body-post-image"
-          src={postImage.src}
-          alt="Post image"
-        />
+        <div className="agenda-tweet-body-post-image">
+          <img src={postImage.src} alt="Post image" />
+        </div>
         <button
           className="btn btn-primary"
           type="button"

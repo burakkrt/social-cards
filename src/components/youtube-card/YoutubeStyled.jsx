@@ -29,8 +29,17 @@ export const AgendaYoutubeCard = styled.div`
 
     &-body {
       &-post-image {
+        width: 100%;
+        overflow: hidden;
         border-radius: 10px;
         margin: 1rem 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
       }
 
       &-post-infos {

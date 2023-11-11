@@ -65,8 +65,16 @@ export const AgendaNewCard = styled.div`
       padding: 0 2.8rem 1.5rem 2.8rem;
       &-image {
         width: 100%;
+        overflow: hidden;
         border-radius: 10px;
         margin-bottom: 0.5rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
       }
 
       &-post-info {

@@ -19,11 +19,9 @@ export default function NewCard() {
         </div>
       </div>
       <div className="agenda-new-body">
-        <img
-          className="agenda-new-body-image"
-          src={newImage.src}
-          alt="New image"
-        />
+        <div className="agenda-new-body-image">
+          <img src={newImage.src} alt="New image" />
+        </div>
         <span className="agenda-new-body-post-info">6 Kas 2023 Pazartesi</span>
         <div className="agenda-new-body-post-detail">
           <h3 className="agenda-new-body-post-detail-title">
