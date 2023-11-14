@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-export const AgendaTweetCard = styled.div`
-  max-width: 512px;
+export const AgendaTweetCard = styled.div<{ multiple: boolean }>`
+  ${(props) => (props.multiple ? 'width: 100%;' : 'max-width: 512px;')};
 
   .agenda-tweet {
     &-header {
@@ -15,6 +15,9 @@ export const AgendaTweetCard = styled.div`
       border-radius: 20px 20px 0px 0px;
       padding: 1.7rem 2.6rem;
       z-index: -2;
+      ${({ multiple }) =>
+        multiple &&
+        'background: none; border: 1px solid #e8e8e8;border-bottom: none;border-radius: 0;'};
 
       &-profile-image {
         position: relative;
@@ -39,7 +42,7 @@ export const AgendaTweetCard = styled.div`
         &-name {
           display: block;
           font: normal normal bold 20px/25px Euclid Circular A;
-          color: #ffffff;
+          color: ${({ multiple }) => (multiple ? '#000000' : '#ffffff')};
         }
         &-link {
           display: block;
@@ -54,16 +57,17 @@ export const AgendaTweetCard = styled.div`
       background: #ffffff 0 0 no-repeat padding-box;
       border: 1px solid #e8e8e8;
       font: normal normal normal 18px/23px Euclid Circular A;
+      ${({ multiple }) => multiple && 'border-top: none;'};
 
       &-post-image {
-        width: 100%;
-        overflow: hidden;
+        ${({ multiple }) => (multiple ? 'min-width: 238px;' : ' width: 100%;')}
+        ${({ multiple }) => multiple === false && 'overflow: hidden;'}
         border-radius: 20px;
         margin: 1rem 0;
 
         img {
           width: 100%;
-          height: 100%;
+          ${({ multiple }) => multiple === false && 'height: 100%;'}
           object-fit: cover;
           object-position: center;
         }
@@ -92,6 +96,12 @@ export const AgendaTweetCard = styled.div`
             color: #000000;
           }
         }
+      }
+
+      &.multiple-body {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
       }
     }
 

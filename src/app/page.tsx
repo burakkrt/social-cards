@@ -6,13 +6,14 @@ import { useState } from 'react'
 
 export default function Home() {
   const [selectCard, setSelectCard] = useState('tweetCard')
+  const [tweetMulti, setTweetMulti] = useState(false)
   const options = [
     { value: 'tweetCard', label: 'Tweet Card' },
     { value: 'newCard', label: 'Haber Card' },
     { value: 'youtubeCard', label: 'Youtube Card' },
   ]
   const renderCard = [
-    { key: 'tweetCard', component: <TweetCard /> },
+    { key: 'tweetCard', component: <TweetCard multiple={tweetMulti} /> },
     { key: 'newCard', component: <NewCard /> },
     { key: 'youtubeCard', component: <YoutubeCard /> },
   ]
@@ -33,6 +34,19 @@ export default function Home() {
           </option>
         ))}
       </select>
+      {selectCard === 'tweetCard' && (
+        <div style={{ margin: '0 15px', display: 'inline-block' }}>
+          <input
+            type="checkbox"
+            name="dads"
+            onClick={(e) => setTweetMulti(!tweetMulti)}
+            checked={tweetMulti}
+          />
+          <span>
+            TweetCard : <strong>{tweetMulti ? 'Multiple' : 'Normal'}</strong>
+          </span>
+        </div>
+      )}
       {renderCard.map((card) => card.key === selectCard && card.component)}
     </main>
   )

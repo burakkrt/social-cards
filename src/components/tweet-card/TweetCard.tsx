@@ -5,7 +5,8 @@ import xLogo from './images/x-logo.svg'
 import openLink from './images/open-link.svg'
 import postImage from './images/post-image.svg'
 import { useEffect } from 'react'
-export default function TweetCard() {
+import { ITweetCard } from './types'
+export default function TweetCard({ multiple }: ITweetCard) {
   // useEffect(() => {
   //   const desc: HTMLElement | null = document.querySelector(
   //     '.agenda-tweet-body-post-text',
@@ -34,7 +35,7 @@ export default function TweetCard() {
   // }, [])
 
   return (
-    <Styled.AgendaTweetCard>
+    <Styled.AgendaTweetCard multiple={multiple}>
       <div className="agenda-tweet-header">
         <div className="agenda-tweet-header-profile-image">
           <img src={ozdagProfil.src} alt="Umit Ozdag" />
@@ -48,31 +49,40 @@ export default function TweetCard() {
           </span>
         </div>
       </div>
-      <div className="agenda-tweet-body">
-        <p className="agenda-tweet-body-post-text">
-          İsrail’in Gazze’de gerçekleştirdiği soykırım ve etnik temizlik
-          karşısında miting yapmak ve çok kızmaktan başka hiç bir şey yapmayan
-          AK Parti şimdi İsrail’in Gazze’yi boşaltma planına yardımcı olacak
-          şekilde hasta tedavisi, yetim çocuklar söylemleri ile kamuoyunu
-          Gazzelilerin bir kısmının Türkiye’ye gelmesine hazırlıyor. Gazzelileri
-          Türkiye’ye ne ad altında olursa olsun getirmek Gazze’yi boşaltmak
-          isteyen İsrail’e hizmettir. @umitozdag
-        </p>
-        <div className="agenda-tweet-body-post-image">
-          <img src={postImage.src} alt="Post image" />
-        </div>
-        <button
-          className="btn btn-primary"
-          type="button"
-          onClick={() => alert('button passive')}
-        >
-          Çeviri yap
-        </button>
-        <div className="agenda-tweet-body-post-infos">
-          <span>ÖS 10:54 - 6 Kas 2023</span>
-          <span>
-            <strong>1.6 Mn</strong> Görüntülenme
-          </span>
+      <div className={`agenda-tweet-body ${multiple && 'multiple-body'}`}>
+        {multiple && (
+          <div className="agenda-tweet-body-post-image">
+            <img src={postImage.src} alt="Post image" />
+          </div>
+        )}
+        <div className="agenda-tweet-body-content">
+          <p className="agenda-tweet-body-post-text">
+            İsrail’in Gazze’de gerçekleştirdiği soykırım ve etnik temizlik
+            karşısında miting yapmak ve çok kızmaktan başka hiç bir şey yapmayan
+            AK Parti şimdi İsrail’in Gazze’yi boşaltma planına yardımcı olacak
+            şekilde hasta tedavisi, yetim çocuklar söylemleri ile kamuoyunu
+            Gazzelilerin bir kısmının Türkiye’ye gelmesine hazırlıyor.
+            Gazzelileri Türkiye’ye ne ad altında olursa olsun getirmek Gazze’yi
+            boşaltmak isteyen İsrail’e hizmettir. @umitozdag
+          </p>
+          {multiple === false && (
+            <div className="agenda-tweet-body-post-image">
+              <img src={postImage.src} alt="Post image" />
+            </div>
+          )}
+          <button
+            className="btn btn-primary"
+            type="button"
+            onClick={() => alert('button passive')}
+          >
+            Çeviri yap
+          </button>
+          <div className="agenda-tweet-body-post-infos">
+            <span>ÖS 10:54 - 6 Kas 2023</span>
+            <span>
+              <strong>1.6 Mn</strong> Görüntülenme
+            </span>
+          </div>
         </div>
       </div>
       <div className="agenda-tweet-footer">
@@ -93,7 +103,7 @@ export default function TweetCard() {
             type="button"
             onClick={() => alert('button passive')}
           >
-            Post 'u görüntülemek için tıklayınız
+            Post &apos;u görüntülemek için tıklayınız
             <img src={openLink.src} alt="Open link logo" />
           </button>
         </div>
