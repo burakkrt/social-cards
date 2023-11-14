@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/youtube-card/YoutubeStyled.jsx"
+    "src/components/youtube-card/YoutubeStyled.tsx"
   ],
   "exclude": ["node_modules"]
 }

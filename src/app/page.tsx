@@ -2,6 +2,7 @@
 import TweetCard from './../components/tweet-card'
 import NewCard from './../components/new-card'
 import YoutubeCard from './../components/youtube-card'
+import TiktokCard from './../components/tiktok-card'
 import { useState } from 'react'
 
 export default function Home() {
@@ -11,11 +12,13 @@ export default function Home() {
     { value: 'tweetCard', label: 'Tweet Card' },
     { value: 'newCard', label: 'Haber Card' },
     { value: 'youtubeCard', label: 'Youtube Card' },
+    { value: 'tiktokCard', label: 'Tiktok Card' },
   ]
   const renderCard = [
     { key: 'tweetCard', component: <TweetCard multiple={tweetMulti} /> },
     { key: 'newCard', component: <NewCard /> },
     { key: 'youtubeCard', component: <YoutubeCard /> },
+    { key: 'tiktokCard', component: <TiktokCard /> },
   ]
 
   return (

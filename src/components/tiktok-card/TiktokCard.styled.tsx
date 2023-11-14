@@ -1,9 +1,33 @@
 import styled from 'styled-components'
 
-export const AgendaYoutubeCard = styled.div`
+export const AgendaTiktokCard = styled.div<{ $isOpen: boolean }>`
   width: 512px;
 
-  .agenda-youtube {
+  .agenda-tiktok {
+    &-video {
+      &-desc {
+        height: auto;
+        overflow: hidden;
+        transition:
+          all,
+          0.4s cubic-bezier(1, 0, 1, 0);
+      }
+      &-button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        text-align: left;
+        cursor: pointer;
+        color: #000000;
+        font: normal normal bold 18px/23px Euclid Circular A;
+        letter-spacing: 0px;
+      }
+      &-date {
+        display: block;
+        font: normal normal normal 18px/23px Euclid Circular A;
+        color: #707b93;
+      }
+    }
     &-header {
       display: flex;
       flex-direction: row;
@@ -28,6 +52,8 @@ export const AgendaYoutubeCard = styled.div`
     }
 
     &-body {
+      display: flex;
+      gap: 1rem;
       &-post-image {
         width: 100%;
         overflow: hidden;
@@ -43,11 +69,14 @@ export const AgendaYoutubeCard = styled.div`
       }
 
       &-post-infos {
+        padding: 2rem 2rem;
+
         &-item {
           display: inline-flex;
           flex-direction: row;
           align-items: center;
           gap: 6px;
+          padding: 1rem 0;
 
           img {
             width: 24px;
