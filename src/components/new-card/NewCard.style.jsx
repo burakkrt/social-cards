@@ -30,7 +30,7 @@ export const AgendaNewCard = styled.div`
           height: 58px;
           left: calc(((58px - 44px - 20px) / 2) * -1);
           top: calc(((58px - 44px - 20px) / 2) * -1);
-          background: #000000 0 0 no-repeat padding-box;
+          background: #e5e5e5 0 0 no-repeat padding-box;
           border-radius: 50%;
           z-index: -1;
         }

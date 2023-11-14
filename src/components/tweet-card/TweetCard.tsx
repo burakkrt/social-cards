@@ -7,32 +7,32 @@ import postImage from './images/post-image.svg'
 import { useEffect } from 'react'
 import { ITweetCard } from './types'
 export default function TweetCard({ multiple }: ITweetCard) {
-  // useEffect(() => {
-  //   const desc: HTMLElement | null = document.querySelector(
-  //     '.agenda-tweet-body-post-text',
-  //   )
-  //   if (desc) {
-  //     const value: string | null = desc.textContent
-  //     let profileText = ''
-  //     if (value && value.indexOf('@') > 0) {
-  //       for (let i = value.indexOf('@'); i < value.length; i++) {
-  //         if (value.charAt(i) === ' ') {
-  //           profileText = value.slice(value.indexOf('@'), i)
-  //           break
-  //         }
-  //       }
-  //     }
-  //     if (value && value.indexOf('@') > 0 && profileText.length === 0) {
-  //       profileText = value.slice(value.indexOf('@'))
-  //     }
-  //     if (value && profileText.length > 0) {
-  //       desc.innerHTML = value.replace(
-  //         profileText,
-  //         `<a href="https://twitter.com/${profileText}" target="_blank">${profileText}</a>`,
-  //       )
-  //     }
-  //   }
-  // }, [])
+  useEffect(() => {
+    const desc: HTMLElement | null = document.querySelector(
+      '.agenda-tweet-body-post-text',
+    )
+    if (desc) {
+      const value: string | null = desc.textContent
+      let profileText = ''
+      if (value && value.indexOf('@') > 0) {
+        for (let i = value.indexOf('@'); i < value.length; i++) {
+          if (value.charAt(i) === ' ') {
+            profileText = value.slice(value.indexOf('@'), i)
+            break
+          }
+        }
+      }
+      if (value && value.indexOf('@') > 0 && profileText.length === 0) {
+        profileText = value.slice(value.indexOf('@'))
+      }
+      if (value && profileText.length > 0) {
+        desc.innerHTML = value.replace(
+          profileText,
+          `<a href="https://twitter.com/${profileText}" target="_blank">${profileText}</a>`,
+        )
+      }
+    }
+  }, [])
 
   return (
     <Styled.AgendaTweetCard multiple={multiple}>
