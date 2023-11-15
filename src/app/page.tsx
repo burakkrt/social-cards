@@ -55,6 +55,10 @@ export default function Home() {
 
   return (
     <main style={{ margin: '48px' }}>
+      <link
+        href="https://fonts.cdnfonts.com/css/euclid-circular-a"
+        rel="stylesheet"
+      />
       <select
         name="cards"
         style={{ width: '200px', padding: '4px 8px', margin: '2rem 0' }}
@@ -70,17 +74,19 @@ export default function Home() {
         ))}
       </select>
       {selectCard === 'tweetCard' && (
-        <div style={{ margin: '0 15px', display: 'inline-block' }}>
-          <input
-            type="checkbox"
-            name="dads"
-            onClick={(e) => setTweetMulti(!tweetMulti)}
-            checked={tweetMulti}
-          />
-          <span>
-            TweetCard : <strong>{tweetMulti ? 'Multiple' : 'Normal'}</strong>
-          </span>
-        </div>
+        <>
+          <div style={{ margin: '0 15px', display: 'inline-block' }}>
+            <input
+              type="checkbox"
+              name="dads"
+              onClick={(e) => setTweetMulti(!tweetMulti)}
+              checked={tweetMulti}
+            />
+            <span>
+              TweetCard : <strong>{tweetMulti ? 'Multiple' : 'Normal'}</strong>
+            </span>
+          </div>
+        </>
       )}
       {renderCard.map((card) => card.key === selectCard && card.component)}
     </main>

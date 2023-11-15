@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const AgendaYoutubeCard = styled.div<{ $isOpen: boolean }>`
+  font-family: 'Euclid Circular A', sans-serif;
   width: 512px;
 
   .agenda-youtube {
@@ -25,6 +26,7 @@ export const AgendaYoutubeCard = styled.div<{ $isOpen: boolean }>`
       }
       &-date {
         display: block;
+
         font: normal normal normal 18px/23px Euclid Circular A;
         color: #707b93;
       }

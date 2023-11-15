@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const AgendaTiktokCard = styled.div<{ $isOpen: boolean }>`
+  font-family: 'Euclid Circular A', sans-serif;
+
   width: 512px;
 
   .agenda-tiktok {
