@@ -60,7 +60,7 @@ const YoutubeCard: React.FC<YoutubeCardProps> = ({ data }) => {
                 .toString()
                 .replaceAll(',,', 'deneme')
                 .replaceAll(',', ' ')
-                .replace('deneme', ' ') + '...'}
+                .replace('deneme', ', ') + '...'}
         </div>
         <button
           className="agenda-youtube-video-button"

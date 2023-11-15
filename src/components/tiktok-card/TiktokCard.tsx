@@ -64,7 +64,7 @@ const TiktokCard: React.FC<TiktokCardProps> = ({ data }) => {
                 .toString()
                 .replaceAll(',,', 'deneme')
                 .replaceAll(',', ' ')
-                .replace('deneme', ' ') + '...'}
+                .replace('deneme', ', ') + '...'}
         </div>
         <button
           className="agenda-tiktok-video-button"

@@ -14,7 +14,7 @@ const data: TiktokCardProps = {
     channelSubs: '100 B Abone',
     comments: '100.000',
     description:
-      'GAZZE’DEN ETKİLENDİ MÜSLÜMAN OLDU! ABD’li bir vatandaş, katilİsrail’in Gazze’deki katliamları Lorem ipsum dolor sit ame consectetur adipisicing elit. Odio dolorum obcaecati voluptates veexplicabo magni veritatis iusto ex nesciunt laudantium',
+      'GAZZE’DEN ETKİLENDİ MÜSLÜMAN OLDU! ABD’li bir vatandaş, katil İsrail’in Gazze’deki katliamları Lorem ipsum dolor sit ame consectetur adipisicing elit. Odio dolorum obcaecati voluptates veexplicabo magni veritatis iusto ex nesciunt laudantium',
     likes: '100.000',
     saves: '100.000',
     shareDate: '12.05.2021',
@@ -30,7 +30,7 @@ const YoutubeData: YoutubeCardProps = {
     channelName: 'Channel Name',
     channelSubs: '100 B Abone',
     description:
-      'GAZZE’DEN ETKİLENDİ MÜSLÜMAN OLDU! ABD’li bir vatandaş, katilİsrail’in Gazze’deki katliamları Lorem ipsum dolor sit ame consectetur adipisicing elit. Odio dolorum obcaecati voluptates veexplicabo magni veritatis iusto ex nesciunt laudantium',
+      'GAZZE’DEN ETKİLENDİ MÜSLÜMAN OLDU! ABD’li bir vatandaş, katil İsrail’in Gazze’deki katliamları Lorem ipsum dolor sit ame consectetur adipisicing elit. Odio dolorum obcaecati voluptates veexplicabo magni veritatis iusto ex nesciunt laudantium',
     shareDate: '12.05.2021',
     likes: '100.000',
     views: '100.000',
