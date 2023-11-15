@@ -6,7 +6,8 @@ export const AgendaTiktokCard = styled.div<{ $isOpen: boolean }>`
   .agenda-tiktok {
     &-video {
       &-desc {
-        height: auto;
+        ${(props) => (props.$isOpen ? 'height: auto;' : 'height: 8rem;')}
+        max-height: ${(props) => (props.$isOpen ? 'auto' : '5rem')};
         overflow: hidden;
         transition:
           all,

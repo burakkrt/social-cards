@@ -1,4 +1,4 @@
-export interface YoutubeCardProps {
+export interface TiktokCardProps {
   data: {
     channelImage: string
     channelName: string
@@ -8,5 +8,7 @@ export interface YoutubeCardProps {
     shareImage: string
     views: string
     likes: string
+    comments: string
+    saves: string
   }
 }
