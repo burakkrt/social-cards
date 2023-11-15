@@ -31,7 +31,7 @@ const YoutubeData: YoutubeCardProps = {
     channelSubs: '100 B Abone',
     description:
       'GAZZE’DEN ETKİLENDİ MÜSLÜMAN OLDU! ABD’li bir vatandaş, katil İsrail’in Gazze’deki katliamları Lorem ipsum dolor sit ame consectetur adipisicing elit. Odio dolorum obcaecati voluptates veexplicabo magni veritatis iusto ex nesciunt laudantium',
-    shareDate: '12.05.2021',
+    shareDate: '2023-11-15T13:42:32.546Z',
     likes: '100.000',
     views: '100.000',
   },
