@@ -41,64 +41,60 @@ const TiktokCard: React.FC<TiktokCardProps> = ({ data }) => {
   }
   return (
     <Styled.AgendaTiktokCard $isOpen={isOpen}>
-      <div className="agenda-tiktok-header">
-        <div className="agenda-tiktok-header-profile-image">
-          <img src={ProfilePhoto.src} alt="Umit Ozdag" />
+      <img className="post-image" src={PostImage.src} alt="Post image" />
+      <div className="agenda-tiktok">
+        <div className="agenda-tiktok-header">
+          <div className="agenda-tiktok-header-profile-image">
+            <img src={ProfilePhoto.src} alt="Umit Ozdag" />
+          </div>
+          <div className="agenda-tiktok-header-profile-des">
+            <span className="agenda-tiktok-header-profile-des-name">
+              {data.channelName}
+            </span>
+            <span className="agenda-tiktok-header-profile-des-link">
+              {data.channelSubs}
+            </span>
+          </div>
         </div>
-        <div className="agenda-tiktok-header-profile-des">
-          <span className="agenda-tiktok-header-profile-des-name">
-            {data.channelName}
-          </span>
-          <span className="agenda-tiktok-header-profile-des-link">
-            {data.channelSubs}
-          </span>
+        <div className="agenda-tiktok-video">
+          <div className="agenda-tiktok-video-desc">
+            {isOpen
+              ? data.description
+              : data.description
+                  .split(' ')
+                  .slice(0, 10)
+                  .toString()
+                  .replaceAll(',,', 'deneme')
+                  .replaceAll(',', ' ')
+                  .replace('deneme', ', ') + '...'}
+          </div>
+          <button
+            className="agenda-tiktok-video-button"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {lenght > 12 && isOpen ? 'Daha Az' : 'Daha Fazla'}
+          </button>
+          <div className="agenda-tiktok-video-date">
+            {timeAgo(data.shareDate)}
+          </div>
         </div>
-      </div>
-      <div className="agenda-tiktok-video">
-        <div className="agenda-tiktok-video-desc">
-          {isOpen
-            ? data.description
-            : data.description
-                .split(' ')
-                .slice(0, 10)
-                .toString()
-                .replaceAll(',,', 'deneme')
-                .replaceAll(',', ' ')
-                .replace('deneme', ', ') + '...'}
-        </div>
-        <button
-          className="agenda-tiktok-video-button"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {lenght > 12 && isOpen ? 'Daha Az' : 'Daha Fazla'}
-        </button>
-        <div className="agenda-tiktok-video-date">
-          {timeAgo(data.shareDate)}
-        </div>
-      </div>
-      <div className="agenda-tiktok-body">
-        <img
-          className="agenda-tiktok-body-post-image"
-          src={PostImage.src}
-          alt="Post image"
-        />
-        <div className="agenda-tiktok-body-post-infos">
-          <div className="agenda-tiktok-body-post-infos-item">
+        <div className="agenda-tiktok-post-infos">
+          <div className="agenda-tiktok-post-infos-item">
             <img src={EyeIcon.src} alt="Eye Icon" />
             <strong>{data.views}</strong>
             <span>Görüntülenme</span>
           </div>
-          <div className="agenda-tiktok-body-post-infos-item">
+          <div className="agenda-tiktok-post-infos-item">
             <img src={LikeIcon.src} alt="Like Icon" />
             <strong>{data.likes}</strong>
             <span>Beğeni</span>
           </div>
-          <div className="agenda-tiktok-body-post-infos-item">
+          <div className="agenda-tiktok-post-infos-item">
             <img src={comment.src} alt="commentIcon" />
             <strong>{data.comments}</strong>
             <span>Yorum</span>
           </div>
-          <div className="agenda-tiktok-body-post-infos-item">
+          <div className="agenda-tiktok-post-infos-item">
             <img src={save.src} alt="saveIcon" />
             <strong>{data.saves}</strong>
             <span>Kaydedilen</span>

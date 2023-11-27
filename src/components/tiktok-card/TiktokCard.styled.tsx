@@ -3,34 +3,23 @@ import styled from 'styled-components'
 export const AgendaTiktokCard = styled.div<{ $isOpen: boolean }>`
   font-family: 'Euclid Circular A', sans-serif;
 
-  width: 512px;
+  display: flex;
+  gap: 2rem;
+
+  .post-image {
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 1rem 0;
+    width: 376px;
+    height: 100%;
+  }
 
   .agenda-tiktok {
-    &-video {
-      &-desc {
-        ${(props) => (props.$isOpen ? 'height: auto;' : 'height: 8rem;')}
-        max-height: ${(props) => (props.$isOpen ? 'auto' : '5rem')};
-        overflow: hidden;
-        transition:
-          all,
-          0.4s cubic-bezier(1, 0, 1, 0);
-      }
-      &-button {
-        background-color: transparent;
-        border: none;
-        padding: 0;
-        text-align: left;
-        cursor: pointer;
-        color: #000000;
-        font: normal normal bold 18px/23px Euclid Circular A;
-        letter-spacing: 0px;
-      }
-      &-date {
-        display: block;
-        font: normal normal normal 18px/23px Euclid Circular A;
-        color: #707b93;
-      }
-    }
+    padding: 3rem 1rem;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     &-header {
       display: flex;
       flex-direction: row;
@@ -54,40 +43,54 @@ export const AgendaTiktokCard = styled.div<{ $isOpen: boolean }>`
       }
     }
 
-    &-body {
+    &-video {
       display: flex;
-      gap: 1rem;
-      &-post-image {
-        width: 100%;
+      flex-direction: column;
+      gap: 2rem;
+      &-desc {
+        ${(props) => (props.$isOpen ? 'height: auto;' : 'height: auto;')}
+        max-height: ${(props) => (props.$isOpen ? 'auto' : 'auto')};
         overflow: hidden;
-        border-radius: 10px;
-        margin: 1rem 0;
+        transition:
+          all,
+          0.4s cubic-bezier(1, 0, 1, 0);
+      }
+      &-button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        text-align: left;
+        cursor: pointer;
+        color: #000000;
+        font: normal normal bold 18px/23px Euclid Circular A;
+        letter-spacing: 0px;
+      }
+      &-date {
+        display: block;
+        font: normal normal normal 18px/23px Euclid Circular A;
+        color: #707b93;
+      }
+    }
+
+    &-post-infos {
+      padding: 2rem 0rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      &-item {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+        padding: 1rem 0;
 
         img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
+          width: 24px;
         }
-      }
 
-      &-post-infos {
-        padding: 2rem 2rem;
-
-        &-item {
-          display: inline-flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 6px;
-          padding: 1rem 0;
-
-          img {
-            width: 24px;
-          }
-
-          &:not(:last-child) {
-            margin-right: 1.8rem;
-          }
+        &:not(:last-child) {
+          margin-right: 1.8rem;
         }
       }
     }
